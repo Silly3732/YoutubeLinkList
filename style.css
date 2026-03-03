@@ -1,7 +1,79 @@
-html {
-  background-color: #bbbbbb;
+/* ナビバー全体 */
+.navbar {
+  background-color: #222;
+  padding: 0;
 }
 
+/* 横並び */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* 各カテゴリ */
+.nav-list > li {
+  position: relative;
+}
+
+/* 親リンク */
+.nav-list > li > a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ホバーで色変化 */
+.nav-list > li > a:hover {
+  background-color: #444;
+}
+
+/* ドロップダウン */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* ホバーで表示 */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 子リンク */
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 20px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* 子リンクホバー */
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+/*　ページ全体の設定　*/
+html {
+  background-color: #f2b403;
+}
+
+/*
 body {
   width: 70%;
   margin: 10px 10px;
@@ -9,85 +81,4 @@ body {
   padding: 0 20px 20px 20px;
   border: 3px solid black;
 }
-
-h1 {
-  margin: 0;
-  padding: 15px 0;    
-  color: #c80000;
-  text-shadow: 3px 3px 1px #000000;
-  font-size: 50px;
-}
-
-#title { text-align: center; }
-
-#subtitle {
-	background: #000000;
-	color: #ffffff;
-	font-size: 15pt;
-	width: 150px; 
-}
-
-p {
-	color: #000000;
- 	opacity: 1.0;
-}
-
-
-button {
-  padding: 8px 14px;
-  margin-top: 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-top: 15px;
-}
-
-.menu {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background: white;
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-
-  /*display: flex;:/          /* ← 追加 */
-  flex-direction: column;  /* ← これが縦並びの核心 */
-  gap: 2px;              /* ← 項目の間隔 */
-
-  /* 最初は隠す */
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-
-  transition: all 0.3s ease;
-}
-
-/* ホバーしたら表示 */
-.dropdown:hover .menu {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.menu li {
-  padding: 6px 12px;
-}
-
-.menu li:hover {
-  background-color: #f0f0f0;
-}
-
-.menu li a {
-  display: block;     /* ← クリック範囲が広がる */
-  white-space: nowrap;
-}
-
-.menu {
-  overflow-x: auto;
-}
+*/
