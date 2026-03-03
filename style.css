@@ -1,0 +1,93 @@
+html {
+  background-color: #bbbbbb;
+}
+
+body {
+  width: 70%;
+  margin: 10px 10px;
+  background-color: #64c8c8;
+  padding: 0 20px 20px 20px;
+  border: 3px solid black;
+}
+
+h1 {
+  margin: 0;
+  padding: 15px 0;    
+  color: #c80000;
+  text-shadow: 3px 3px 1px #000000;
+  font-size: 50px;
+}
+
+#title { text-align: center; }
+
+#subtitle {
+	background: #000000;
+	color: #ffffff;
+	font-size: 15pt;
+	width: 150px; 
+}
+
+p {
+	color: #000000;
+ 	opacity: 1.0;
+}
+
+
+button {
+  padding: 8px 14px;
+  margin-top: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: white;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+
+  /*display: flex;:/          /* ← 追加 */
+  flex-direction: column;  /* ← これが縦並びの核心 */
+  gap: 2px;              /* ← 項目の間隔 */
+
+  /* 最初は隠す */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+}
+
+/* ホバーしたら表示 */
+.dropdown:hover .menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.menu li {
+  padding: 6px 12px;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu li a {
+  display: block;     /* ← クリック範囲が広がる */
+  white-space: nowrap;
+}
+
+.menu {
+  overflow-x: auto;
+}
