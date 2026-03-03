@@ -79,7 +79,8 @@ body {
   background-color: #64c8c8;
   padding: 0 20px 20px 20px;
   border: 3px solid black;*/
-  font-size: 20px;
+  font-size: 18px;
+  font-family: sans-serif;
   margin: 0;
   background-color: #f4f4f4;
 
@@ -89,9 +90,23 @@ body {
 
 .container {
   width: 100%;
-  max-width: 600px;  /* ← ここで幅を制御 */
+  max-width: 900px;  /* ← ここで幅を制御 */
+  margin: 0 auto;          /* ← 中央寄せ */
   background: white;
   padding: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   border-radius: 12px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 22px; /* 少し大きめ */
+  }
+
+  .container {
+    padding: 15px;
+    border-radius: 0;  /* スマホでは角丸なしでも自然 */
+    box-shadow: none;  /* 影を消すとよりアプリ感 */
+  }
 }
